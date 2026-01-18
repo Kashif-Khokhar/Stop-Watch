@@ -1,0 +1,79 @@
+:root {
+    --bg: #0f172a;
+    --accent: #3b82f6;
+    --text: #f8fafc;
+    --glass: rgba(255, 255, 255, 0.03);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+body {
+    background: #f1f5f9;
+    height: 100vh;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.stopwatch-card {
+    background: var(--bg);
+    width: 380px; padding: 40px;
+    border-radius: 40px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+    color: var(--text);
+    text-align: center;
+}
+
+.badge { background: var(--accent); color: white; font-size: 10px; padding: 2px 8px; border-radius: 5px; vertical-align: middle; }
+
+.display-container {
+    position: relative;
+    margin: 40px 0;
+    padding: 20px;
+    background: var(--glass);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.timer-display {
+    font-size: 3.5rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums; /* Prevents numbers from jumping */
+}
+
+.ms { font-size: 1.5rem; color: var(--accent); }
+
+.controls { display: flex; gap: 10px; justify-content: center; margin-bottom: 30px; }
+
+button {
+    padding: 12px 20px; border-radius: 12px; border: none;
+    font-weight: bold; cursor: pointer; transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+.btn-start { background: var(--accent); color: white; width: 100px; }
+.btn-lap { background: rgba(255,255,255,0.1); color: white; }
+.btn-reset { background: #ef4444; color: white; }
+
+button:disabled { opacity: 0.3; cursor: not-allowed; }
+button:hover:not(:disabled) { transform: translateY(-2px); filter: brightness(1.2); }
+
+.laps-container {
+    max-height: 150px;
+    overflow-y: auto;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 15px;
+}
+
+.laps-container ul { list-style: none; }
+
+.laps-container li {
+    display: flex; justify-content: space-between;
+    padding: 8px 10px;
+    font-size: 0.85rem;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.lap-num { color: var(--accent); font-weight: bold; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }

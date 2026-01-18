@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChronoTrack Pro | Precision Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stopwatch-card">
+        <div class="header">
+            <h3>ChronoTrack <span class="badge">PRO</span></h3>
+            <p>High-Precision Performance Tracking</p>
+        </div>
+
+        <div class="display-container">
+            <div class="timer-display" id="display">00:00:00<span class="ms">.00</span></div>
+            <div class="visual-ring"></div>
+        </div>
+
+        <div class="controls">
+            <button id="startStopBtn" onclick="startStop()" class="btn-start">Start</button>
+            <button id="lapBtn" onclick="recordLap()" class="btn-lap" disabled>Lap</button>
+            <button onclick="reset()" class="btn-reset">Reset</button>
+        </div>
+
+        <div class="laps-container">
+            <ul id="lapsList"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
